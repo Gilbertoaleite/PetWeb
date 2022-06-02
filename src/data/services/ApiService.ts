@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const url = process.env.BASE_API;
+
+
 export const ApiService = axios.create({
-    baseURL: 'https://adote-um-pet-multistack.herokuapp.com/api',
+    baseURL:url,
     headers: {
         'Content-Type': 'application/json'
     }
