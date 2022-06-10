@@ -10,7 +10,9 @@ export default function CabecalhoAdmin() {
     return (
         <CabecalhoContainer>
             <div>
+            <NextLink  href={ '/' } >
                 <Logo src={ '/imagens/logo.svg' } alt={ 'Adote um Pet' } />
+                    </NextLink>
                 <LinksContainer>
                     <Link component={ NextLink } href={ '/pets/cadastro' } >
                         <a>Cadastrar Pet</a>

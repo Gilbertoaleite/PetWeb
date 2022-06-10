@@ -22,6 +22,10 @@ export const CabecalhoContainer = styled('header')`
 
 export const Logo = styled('img')`
     width: 125px;
+
+    &:hover{
+        cursor:pointer;
+    }
 `;
 
 export const LinksContainer = styled('nav')`

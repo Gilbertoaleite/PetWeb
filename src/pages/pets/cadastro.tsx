@@ -24,7 +24,7 @@ const Cadastro: NextPage = () => {
                 subtitulo={ 'Preencha os dados do novo Pet' }
             />
 
-            <Paper sx={ { maxWidth: 970, mx: 'auto', p: 5 } } >
+            <Paper sx={ { maxWidth: 970, mx: 'auto', p: 5} } >
                 <Grid container spacing={ 3 } >
                     <Grid item xs={ 12 } >
                         <TextField
@@ -36,13 +36,14 @@ const Cadastro: NextPage = () => {
                         />
                     </Grid>
                     <Grid item xs={ 12 } >
-                        <TextField
+                        <TextField 
                             value={ historia }
                             onChange={ (e) => setHistoria(e.target.value) }
                             label={ 'História do Pet' }
                             multiline
                             fullWidth
                             rows={ 4 }
+                        
                         />
                     </Grid>
                     <Grid item xs={ 12 } >
@@ -55,7 +56,7 @@ const Cadastro: NextPage = () => {
                         />
                         <Button
                             variant={ 'contained' }
-                            color={ 'secondary' }
+                            color={ 'primary' }
                             sx={ { mt: 2 } }
                             component={ 'a' }
                             href={ 'https://imgur.com/upload' }
