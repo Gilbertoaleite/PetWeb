@@ -71,6 +71,7 @@ const Cadastro: NextPage = () => {
                             variant={ 'contained' }
                             fullWidth
                             sx={ { maxWidth: { md: 200 }, mt: 4 } }
+                            disabled
                         >
                             Cadastrar Pet
                         </Button>
