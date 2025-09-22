@@ -20,7 +20,7 @@ Sistema completo de adoção de pets virtuais desenvolvido com Next.js, TypeScri
 
 ## 🚀 Demo
 
-**Aplicação em Produção:** https://pets-frontend-lwyojegcu-ediaristas.vercel.app
+**Aplicação em Produção:** https://pets-frontend-5ovnbx4so-ediaristas.vercel.app
 
 **API Endpoints:**
 - `GET /api/pets` - Lista todos os pets
@@ -437,7 +437,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 - [x] Documentação completa
 - [x] Testes em produção
 
-**URL de Produção:** https://pets-frontend-lwyojegcu-ediaristas.vercel.app
+**URL de Produção:** https://pets-frontend-5ovnbx4so-ediaristas.vercel.app
 
 ---
 
