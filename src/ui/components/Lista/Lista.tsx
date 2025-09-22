@@ -66,7 +66,7 @@ export default function Lista(props: ListaProps) {
                                     e.preventDefault();
                                     e.stopPropagation();
                                     props.onSelect(pet);
-                                }}
+                                } }
                                 type="button"
                             >
                                 Adotar { pet.nome }

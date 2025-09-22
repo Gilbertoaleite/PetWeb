@@ -97,7 +97,7 @@ const Home: NextPage = () => {
                             e.preventDefault();
                             e.stopPropagation();
                             setPetSelecionado(null);
-                        }}
+                        } }
                         disabled={ carregando }
                         type="button"
                     >
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
                             e.preventDefault();
                             e.stopPropagation();
                             adotar();
-                        }}
+                        } }
                         disabled={ carregando || !email || !valor }
                         startIcon={ carregando ? <CircularProgress size={ 16 } /> : null }
                         type="button"

@@ -44,7 +44,7 @@ Sistema completo de adoção de pets virtuais desenvolvido com Next.js, TypeScri
 
 ### DevOps
 - **Vercel** - Deploy e hospedagem
-- **Yarn/NPM** - Gerenciamento de pacotes
+- **NPM** - Gerenciamento de pacotes
 - **Git** - Controle de versão
 
 ## 📁 Estrutura do Projeto
@@ -76,7 +76,7 @@ frontend/
 ### 1. Pré-requisitos
 ```bash
 Node.js 16+ 
-Yarn ou NPM
+NPM
 ```
 
 ### 2. Clone o repositório
@@ -87,10 +87,7 @@ cd PetWeb/frontend
 
 ### 3. Instale as dependências
 ```bash
-# Com Yarn (recomendado)
-yarn install
-
-# Ou com NPM
+# Com NPM
 npm install
 ```
 
@@ -104,20 +101,16 @@ NEXT_PUBLIC_BASE_API=http://localhost:3002
 ```
 
 ### 5. Execute o projeto
-
-**Modo Desenvolvimento:**
 ```bash
-# Frontend
-yarn dev          # http://localhost:3000
+# Desenvolvimento
+npm run dev          # http://localhost:3000
 
-# API Mock Local
-yarn mock         # http://localhost:3002
-```
+# API Mock (opcional)
+npm run mock         # http://localhost:3002
 
-**Modo Produção:**
-```bash
-yarn build
-yarn start
+# Produção
+npm run build
+npm start
 ```
 
 ## 📊 Banco de Dados
@@ -181,11 +174,7 @@ Para desenvolvimento, o sistema usa arquivos JSON em `mock/db.json`:
 
 1. **Instalar Vercel CLI:**
 ```bash
-# Windows (recomendado)
 npm install -g vercel
-
-# macOS/Linux
-yarn global add vercel
 ```
 
 2. **Fazer login:**
@@ -195,14 +184,14 @@ vercel login
 
 3. **Deploy:**
 ```bash
-yarn mock:deploy
+npm run mock:deploy
 ```
 
 ### Deploy Manual
 
 1. **Build local:**
 ```bash
-yarn build
+npm run build
 ```
 
 2. **Deploy no Vercel:**
@@ -263,24 +252,24 @@ NEXT_PUBLIC_BASE_API=/api  # URL relativa
 
 ### Desenvolvimento
 ```bash
-yarn dev          # Servidor de desenvolvimento
-yarn mock         # API mock local
-yarn build        # Build de produção
-yarn start        # Servidor de produção
+npm run dev          # Servidor de desenvolvimento
+npm run mock         # API mock local
+npm run build        # Build de produção
+npm start            # Servidor de produção
 ```
 
 ### Deploy
 ```bash
-yarn mock:deploy    # Deploy completo
-yarn mock:dev       # Deploy preview
-yarn mock:preview   # Preview local
+npm run mock:deploy    # Deploy completo
+npm run mock:dev       # Deploy preview
+npm run mock:preview   # Preview local
 ```
 
 ### Utilitários
 ```bash
-yarn lint          # Linting do código
-yarn type-check    # Verificação TypeScript
-yarn format        # Formatação do código
+npm run lint          # Linting do código
+npm run type-check    # Verificação TypeScript
+npm run format        # Formatação do código
 ```
 
 ## 📚 Documentação Técnica
