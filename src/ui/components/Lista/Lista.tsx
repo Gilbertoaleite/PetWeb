@@ -62,7 +62,12 @@ export default function Lista(props: ListaProps) {
                                 variant={ 'contained' }
                                 fullWidth
                                 size="large"
-                                onClick={ () => props.onSelect(pet) }
+                                onClick={ (e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    props.onSelect(pet);
+                                }}
+                                type="button"
                             >
                                 Adotar { pet.nome }
                             </Button>

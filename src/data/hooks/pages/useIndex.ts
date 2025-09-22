@@ -46,6 +46,7 @@ export function useIndex(){
     function adotar(){
         if(petSelecionado !== null){
             if(validarDadosAdocao()){
+                setCarregando(true);
                 ApiService.post('/adocoes', {
                     pet_id: petSelecionado.id,
                     email,
@@ -54,11 +55,15 @@ export function useIndex(){
                     .then(() => {
                         setPetSelecionado(null);
                         setMensagem('Pet adotado com sucesso!');
-                        // limparFormulario();
+                        limparFormulario();
                     })
                     .catch((error: AxiosError) => {
-                        setMensagem(error.response?.data.message);
+                        const mensagemErro = error.response?.data?.message || 'Erro ao processar adoção. Tente novamente.';
+                        setMensagem(mensagemErro);
                     })
+                    .finally(() => {
+                        setCarregando(false);
+                    });
             } else {
                 setMensagem('Preencha todos os campos corretamente!')
             }

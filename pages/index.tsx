@@ -93,16 +93,26 @@ const Home: NextPage = () => {
                 <DialogActions sx={ { px: 0 } }>
                     <Button
                         color={ 'secondary' }
-                        onClick={ () => setPetSelecionado(null) }
+                        onClick={ (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setPetSelecionado(null);
+                        }}
                         disabled={ carregando }
+                        type="button"
                     >
                         Cancelar
                     </Button>
                     <Button
                         variant={ 'contained' }
-                        onClick={ () => adotar() }
+                        onClick={ (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            adotar();
+                        }}
                         disabled={ carregando || !email || !valor }
                         startIcon={ carregando ? <CircularProgress size={ 16 } /> : null }
+                        type="button"
                     >
                         { carregando ? 'Processando...' : 'Adotar' }
                     </Button>
