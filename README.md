@@ -20,7 +20,7 @@ Sistema completo de adoção de pets virtuais desenvolvido com Next.js, TypeScri
 
 ## 🚀 Demo
 
-**Aplicação em Produção:** https://pets-frontend-ezj6dhcya-ediaristas.vercel.app
+**Aplicação em Produção:** https://pets-frontend-dud2ddwv6-ediaristas.vercel.app
 
 **API Endpoints:**
 - `GET /api/pets` - Lista todos os pets
@@ -381,6 +381,50 @@ Medidas de segurança:
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
+## 🔧 Troubleshooting
+
+### Páginas de Administração Não Carregam
+
+**Problema:** As páginas `/pets/adocoes` e `/pets/relatorio` não abrem ou mostram erro 404.
+
+**Solução:** Next.js usa roteamento baseado em arquivos. As páginas devem estar em `pages/pets/` não em `src/pages/pets/`.
+
+```bash
+# Estrutura correta
+pages/
+  pets/
+    adocoes.tsx    ✅ Correto
+    relatorio.tsx  ✅ Correto
+
+# Estrutura incorreta  
+src/pages/
+  pets/
+    adocoes.tsx    ❌ Next.js não encontra
+    relatorio.tsx  ❌ Next.js não encontra
+```
+
+### API Não Funciona Localmente
+
+**Problema:** Erro de conexão com a API ou dados não carregam.
+
+**Solução:** Configure o arquivo `.env.local` corretamente:
+
+```bash
+# Para desenvolvimento local
+NEXT_PUBLIC_BASE_API=/api
+
+# Para usar API de produção
+NEXT_PUBLIC_BASE_API=https://pets-frontend-dud2ddwv6-ediaristas.vercel.app/api
+```
+
+### Imagens Não Carregam
+
+**Problema:** Imagens dos pets aparecem quebradas ou não carregam.
+
+**Solução:** As imagens usam URLs do Unsplash. Verifique sua conexão com a internet e se as URLs estão corretas no `mock/db.json`.
+
+---
+
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
@@ -404,7 +448,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 - [x] Documentação completa
 - [x] Testes em produção
 
-**URL de Produção:** https://pets-frontend-ezj6dhcya-ediaristas.vercel.app
+**URL de Produção:** https://pets-frontend-dud2ddwv6-ediaristas.vercel.app
 
 ---
 
