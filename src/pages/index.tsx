@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Titulo from '../ui/components/Titulo/Titulo';
 import Lista from '../ui/components/Lista/Lista'
-import { Dialog, TextField, Grid, DialogActions, Button, Snackbar } from '@mui/material'
+import { Dialog, TextField, Grid, DialogActions, Button, Snackbar, CircularProgress, Box, Alert } from '@mui/material'
 import { useIndex } from '../data/hooks/pages/useIndex';
+import { DebugApiConfig } from '../ui/components/Debug/DebugApiConfig';
 
 const Home: NextPage = () => {
   const {
@@ -13,15 +14,38 @@ const Home: NextPage = () => {
     setEmail,
     valor,
     setValor,
-    mensagem, 
+    mensagem,
     setMensagem,
-    adotar
+    adotar,
+    carregando,
+    erro
   } = useIndex();
+
+  if (carregando) {
+    return (
+      <div>
+        <DebugApiConfig />
+        <Titulo
+          titulo=""
+          subtitulo={
+            <span>
+              Com um pequeno valor mensal, você <br />
+              pode <strong>adotar um pet virtualmente</strong>
+            </span>
+          }
+        />
+        <Box display="flex" justifyContent="center" alignItems="center" minHeight="400px">
+          <CircularProgress />
+        </Box>
+      </div>
+    );
+  }
 
   return (
     <div>
-      <Titulo 
-        titulo="" 
+      <DebugApiConfig />
+      <Titulo
+        titulo=""
         subtitulo={
           <span>
             Com um pequeno valor mensal, você <br />
@@ -29,60 +53,66 @@ const Home: NextPage = () => {
           </span>
         } />
 
+      { erro && (
+        <Alert severity="error" sx={ { mb: 3, maxWidth: 1200, mx: 'auto' } }>
+          { erro }
+        </Alert>
+      ) }
+
       <Lista
-        pets={listaPets}
-        onSelect={(pet) => setPetSelecionado(pet)}
+        pets={ listaPets }
+        onSelect={ (pet) => setPetSelecionado(pet) }
       />
 
 
-      <Dialog 
-        open={petSelecionado !== null} 
+      <Dialog
+        open={ petSelecionado !== null }
         fullWidth
-        PaperProps={{ sx: { p: 5 } }}
-        onClose={() => setPetSelecionado(null)}
+        PaperProps={ { sx: { p: 5 } } }
+        onClose={ () => setPetSelecionado(null) }
       >
-        <Grid container spacing={2} >
-          <Grid item xs={12} >
+        <Grid container spacing={ 2 } >
+          <Grid item xs={ 12 } >
             <TextField
-              label={'E-mail'}
-              type={'email'}
+              label={ 'E-mail' }
+              type={ 'email' }
               fullWidth
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={ email }
+              onChange={ (e) => setEmail(e.target.value) }
             />
-            
+
           </Grid>
-          <Grid item xs={12} >
+          <Grid item xs={ 12 } >
             <TextField
-              label={'Quantia por mês'}
-              type={'number'}
+              label={ 'Quantia por mês' }
+              type={ 'number' }
               fullWidth
-              value={valor}
-              onChange={(e) => setValor(e.target.value)}
+              value={ valor }
+              onChange={ (e) => setValor(e.target.value) }
             />
           </Grid>
         </Grid>
-        <DialogActions sx={{mt: 5}} >
+        <DialogActions sx={ { mt: 5 } } >
           <Button
-            color={'secondary'}
-            onClick={() => setPetSelecionado(null)}
+            color={ 'secondary' }
+            onClick={ () => setPetSelecionado(null) }
           >
             Cancelar
           </Button>
           <Button
-            variant={'contained'}
-            onClick={() => adotar()}
+            variant={ 'contained' }
+            onClick={ () => adotar() }
           >
             Confirmar adoção
           </Button>
         </DialogActions>
       </Dialog>
 
-      <Snackbar 
-        open={mensagem.length > 0}
-        message={mensagem}
-        autoHideDuration={2500}
-        onClose={() => setMensagem('')}
+      <Snackbar
+        open={ mensagem.length > 0 }
+        message={ mensagem }
+        autoHideDuration={ 2500 }
+        onClose={ () => setMensagem('') }
       />
     </div>
   )

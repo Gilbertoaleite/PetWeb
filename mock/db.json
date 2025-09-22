@@ -1,0 +1,144 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "nome": "Buddy",
+      "historia": "Buddy é um Golden Retriever muito carinhoso e brincalhão. Foi encontrado abandonado na rua quando ainda era filhote. Agora está recuperado e procura uma família amorosa para dar muito amor e alegria.",
+      "foto": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=500"
+    },
+    {
+      "id": 2,
+      "nome": "Luna",
+      "historia": "Luna é uma gata persa de 2 anos, muito tranquila e carinhosa. Sua antiga família precisou se mudar para outro país e não pôde levá-la. Ela adora carinho, é muito sociável e se dá bem com crianças.",
+      "foto": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500"
+    },
+    {
+      "id": 3,
+      "nome": "Max",
+      "historia": "Max é um vira-lata de porte médio, muito inteligente e fiel. Foi resgatado de maus-tratos quando era jovem e já está completamente recuperado. É ideal para famílias com crianças e se adapta bem a apartamentos.",
+      "foto": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500"
+    },
+    {
+      "id": 4,
+      "nome": "Bella",
+      "historia": "Bella é uma Border Collie muito ativa e inteligente. Sua família anterior não tinha tempo suficiente para dar a atenção que ela merecia. Precisa de uma família que goste de atividades ao ar livre e exercícios regulares.",
+      "foto": "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=500"
+    },
+    {
+      "id": 5,
+      "nome": "Mimi",
+      "historia": "Mimi é uma gatinha de 1 ano, muito brincalhona e curiosa. Foi encontrada ainda filhote e criada com muito carinho. É perfeita para quem busca um companheiro alegre e cheio de energia para animar o lar.",
+      "foto": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=500"
+    },
+    {
+      "id": 6,
+      "nome": "Rex",
+      "historia": "Rex é um cão pastor alemão de 3 anos, muito leal e protetor. Recentemente perdeu sua família e está procurando um novo lar. É ideal para quem tem experiência com cães de grande porte.",
+      "foto": ""
+    },
+    {
+      "id": 7,
+      "nome": "Princesa",
+      "historia": "Princesa é uma gata vira-lata muito carinhosa. Foi encontrada ferida na rua, mas já está completamente recuperada. Adora brincar com bolinhas e é muito dócil.",
+      "foto": null
+    }
+  ],
+  "adocoes": [
+    {
+      "id": 1,
+      "nomeAdotante": "João Silva",
+      "email": "joao.silva@exemplo.com",
+      "valor": "150.00",
+      "dataAdocao": "2024-01-15",
+      "status": "pendente",
+      "pet": {
+        "id": 1,
+        "nome": "Buddy",
+        "historia": "Buddy é um Golden Retriever muito carinhoso e brincalhão.",
+        "foto": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=500"
+      }
+    },
+    {
+      "id": 2,
+      "nomeAdotante": "Maria Santos",
+      "email": "maria.santos@exemplo.com",
+      "valor": "200.00",
+      "dataAdocao": "2024-01-18",
+      "status": "aprovado",
+      "pet": {
+        "id": 2,
+        "nome": "Luna",
+        "historia": "Luna é uma gata persa de 2 anos, muito tranquila e carinhosa.",
+        "foto": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500"
+      }
+    },
+    {
+      "id": 3,
+      "nomeAdotante": "Carlos Pereira",
+      "email": "carlos.pereira@exemplo.com",
+      "valor": "180.00",
+      "dataAdocao": "2024-01-20",
+      "status": "concluido",
+      "pet": {
+        "id": 3,
+        "nome": "Max",
+        "historia": "Max é um vira-lata de porte médio, muito inteligente e fiel.",
+        "foto": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500"
+      }
+    },
+    {
+      "id": 4,
+      "nomeAdotante": "Ana Costa",
+      "email": "ana.costa@exemplo.com",
+      "valor": "250.00",
+      "dataAdocao": "2024-01-22",
+      "status": "rejeitado",
+      "pet": {
+        "id": 4,
+        "nome": "Bella",
+        "historia": "Bella é uma Border Collie muito ativa e inteligente.",
+        "foto": "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=500"
+      }
+    },
+    {
+      "id": 5,
+      "nomeAdotante": "Pedro Oliveira",
+      "email": "pedro.oliveira@exemplo.com",
+      "valor": "120.00",
+      "dataAdocao": "2024-01-25",
+      "status": "pendente",
+      "pet": {
+        "id": 6,
+        "nome": "Rex",
+        "historia": "Rex é um cão pastor alemão de 3 anos, muito leal e protetor.",
+        "foto": ""
+      }
+    },
+    {
+      "id": 6,
+      "nomeAdotante": "Lucia Ferreira",
+      "email": "lucia.ferreira@exemplo.com",
+      "valor": "100.00",
+      "dataAdocao": "2024-01-28",
+      "status": "aprovado",
+      "pet": {
+        "id": 7,
+        "nome": "Princesa",
+        "historia": "Princesa é uma gata vira-lata muito carinhosa.",
+        "foto": null
+      }
+    },
+    {
+      "pet_id": 5,
+      "email": "gilbertoaleite@hotmail.com",
+      "valor": "50",
+      "id": 7
+    },
+    {
+      "pet_id": 1,
+      "email": "gilbertoaleite@hotmail.com",
+      "valor": "55",
+      "id": 8
+    }
+  ]
+}

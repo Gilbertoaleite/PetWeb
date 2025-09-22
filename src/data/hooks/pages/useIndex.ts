@@ -9,13 +9,32 @@ export function useIndex(){
         [petSelecionado, setPetSelecionado] = useState<Pet | null>(null),
         [email, setEmail] = useState(''),
         [valor, setValor] = useState(''),
-        [mensagem, setMensagem] = useState('');
+        [mensagem, setMensagem] = useState(''),
+        [carregando, setCarregando] = useState(true),
+        [erro, setErro] = useState('');
 
     useEffect(() => {
-    ApiService.get('/pets')
-        .then((resposta) => {
-            setListaPets(resposta.data);
-        })
+        const carregarPets = async () => {
+            try {
+                setCarregando(true);
+                setErro('');
+                const resposta = await ApiService.get('/pets');
+                setListaPets(resposta.data);
+            } catch (error: any) {
+                console.error('Erro ao carregar pets:', error);
+                
+                // Verificar se é erro de rede (API não disponível)
+                if (error.code === 'NETWORK_ERROR' || error.message === 'Network Error' || !error.response) {
+                    setErro('❌ Sem conexão com o banco de dados. Verifique se o servidor está rodando na porta 3002.');
+                } else {
+                    setErro('Erro ao carregar a lista de pets. Tente novamente.');
+                }
+            } finally {
+                setCarregando(false);
+            }
+        };
+
+        carregarPets();
     }, [])
 
     useEffect(() => {
@@ -65,6 +84,8 @@ export function useIndex(){
         setValor,
         mensagem, 
         setMensagem,
-        adotar
+        adotar,
+        carregando,
+        erro
     };
 }
